@@ -1,0 +1,362 @@
+/*====================Аннулирующий код==================*/
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing:  border-box;
+	-webkit-box-sizing:  border-box;
+	-box-sizing:  border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html, body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-style: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea{font-family: inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}	
+
+/*====================Основной участок====================*/		
+
+body{
+	font-family: 'Work Sans', sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	min-height: 100vh;
+	background: #F4F5FC;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #111111;
+}
+.container{
+	margin: 30px;
+	width: 100%;
+	max-width: 665px;
+}
+/*====================Сама форма====================*/	
+.content{
+	display: flex;
+	height: fit-content;
+	background: #fff;
+	overflow: hidden;
+}
+/*====================Левая часть формы====================*/
+.left_side{
+	width: 20.8%;
+	background: #5A61ED;
+	position: relative;
+}
+.left_side h1{
+	display: block;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 49px;
+	font-weight: 400;
+	line-height: 140%;
+	text-align: left;
+	writing-mode: vertical-rl; 
+	transform: scale(-1);
+	color: #fff;
+	white-space: nowrap;
+	position: absolute;
+	right: 3px;
+	bottom: 22px;
+}
+/*====================Правая часть формы====================*/
+.right_side{
+	width: 79%;
+	height: 100%;
+	position: relative;
+	padding: 38.5px 22px 30px 20.8px;
+}
+.svg_anim{
+	position: absolute;
+	bottom: -55px;
+    right: -105px;
+}
+/*====================Задание анимации SVG====================*/
+.svg_anim path{
+	stroke-dashoffset: 1000;
+	stroke-dasharray: 2000;
+	animation: word1_anim 5s ease forwards, 
+	fill 0.6s ease 2.5s forwards;
+}
+/*====================Настройка анимации SVG====================*/
+@keyframes word1_anim{
+	0%{
+		stroke-dashoffset: 2000;
+	}
+	100%{
+		stroke-dashoffset: 0;
+	}
+}
+/*====================Настройка заливки SVG====================*/
+@keyframes fill{
+	0%{
+		fill: transparent;
+	}
+	100%{
+		fill: #F9FAFF;
+	}
+}
+/*====================Верхняя часть формы====================*/
+.title{
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 110%;
+	letter-spacing: -0.4px;
+}
+.subtitle{
+	font-size: 14px;
+}
+form{
+	margin-top: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 1;
+	position: relative;
+}
+/*====================Настройка блоков формы====================*/
+.inputBox{
+	position: relative;
+	width: 100%;
+	max-width: 234px;
+	height: 42px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 16px;
+	animation: animateSlide 1s ease calc(0.3s*var(--i)) forwards;
+	opacity: 0;
+}
+.inputBox:nth-last-child(-n+3){
+	margin-bottom: 0;
+}
+.inputBox:nth-child(2n-1){
+	margin-right: 13px;
+}
+.inputBox:last-child{
+	margin-top: 90px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	max-width: 100%;
+	flex-direction: row;
+	margin-right: 0;
+}
+@keyframes animateSlide{
+	from{
+		opacity: 0;
+		transform: translateY(100px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.row{
+	display: flex;
+	margin-top: 2px;
+}
+input, select, label{
+	font-family: 'Work Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	background: rgba(0, 0, 0, 0%);
+	position: relative;
+}
+input, select{
+	margin-top: 5px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid #f2f2f2;
+}
+label{
+	margin-top: 5px;
+}
+option{
+	background: #fff;
+}
+select{
+	width: 100%;
+	padding-bottom: 7px;
+}
+.row p:not(:last-child){
+	margin-right: 10px;
+}
+
+.row p:nth-child(1) {
+    width: 26%;
+    flex-grow: 1;
+}
+.row p:nth-child(2) {
+    width: 42%;
+     flex-grow: 1;
+}
+.row p:nth-child(3) {
+    width: 32%;
+     flex-grow: 1;
+}
+/*====================Настройка placeholder====================*/
+::-webkit-input-placeholder{
+	font-weight: 400;
+	font-size: 14px;
+}
+:-moz-placeholder{
+	font-weight: 400;
+	font-size: 14px;
+}
+.login{
+	font-size: 13px;
+	display: flex;
+	width: 100%;
+	max-width: 147px;
+}
+.login span{
+	display: block;
+	line-height: 40px;
+}
+.login a{
+	line-height: 40px;
+	display: block;
+	color: #5a61ed;
+	text-decoration: underline;
+	font-weight: 500;
+	margin-left: 3px;
+}
+input[type="submit"]{
+	width: 100%;
+	max-width: 154px;
+	height: 32px;
+	background: #5A61ED;
+	color: #fff;
+	text-align: center;
+	line-height: 32px;
+	font-family: "PT Sans", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	border: none;
+	margin: 0;
+	cursor: pointer;
+}
+input[type="radio"]{
+	display: none;
+}
+label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 19px;
+	margin-right: 0;
+	user-select: none;
+}
+label:last-child{
+	margin-left: 19px;
+}
+/*====================Замена значка radio====================*/
+label::before{
+	content: '';
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	left: 0;
+	top: 1px;
+	display: inline-block;
+	background: url('../img/radio.svg') 0 0 no-repeat;
+	transition: 0.6s ease;
+}
+input[type="radio"]:checked + label::before {
+	background: url('../img/radio_active.svg') 0 0 no-repeat;
+	top: 0.8px;
+	left: 0.5px;
+	transition: 0.6s ease;
+}
+/*====================В случае неправильного ввода применить====================*/
+.error{
+	color: #f22;
+	border-bottom: 2px solid #FF2828;
+}
+/*====================В случае ошибки всплывающая подсказка====================*/
+.help{
+	margin-top: 5px;
+	width: 100%;
+	max-width: 234px;
+	color: #f22;
+	line-height: 130%;
+	font-weight: 400;
+	display: none;
+}
+/*====================Медиа запрос при ширине меньше 800px====================*/
+@media(max-width: 800px){
+	/*====================Сделать из левого и правого блока - верхний и нижний====================*/
+	.content{
+		flex-direction: column;
+	}
+	.left_side{
+	width: 100%;
+	height: 100px;
+}
+	.left_side h1{
+	writing-mode: horizontal-tb;
+	transform: scale(1);
+	left: 20px;
+	bottom: 15px;
+}
+	.right_side{
+		width: 100%;
+	}
+	.inputBox{
+		max-width: none;
+	}
+	.inputBox:nth-last-child(-n+3){
+	margin-bottom: 16px;
+}
+	.inputBox:nth-last-child(2n-1){
+	margin-right: 0px;
+}
+.help{
+	max-width: 600px;
+	display: none;
+}
+.inputBox.password{
+transition: 0.6s ease;
+}
+.inputBox.password.space_pass{
+	margin-bottom: 70px;
+}
+}
+@media(max-width: 480px){
+	.svg_anim{
+		transform: scale(0.8);
+		bottom: -100px;
+		right: -110px;
+	}
+.inputBox:last-child{
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	align-items: center;
+}
+.login{
+	margin-top: 10px;
+}
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="fonts/PTSans/stylesheet.css">
+	<link rel="stylesheet" href="fonts/WorkSans/stylesheet.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<div class="left_side">
+				<h1>Sign up</h1>
+			</div>
+			<div class="right_side">
+				<svg class="svg_anim" width="411" height="411" viewBox="0 0 411 411" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M340.999 343.65C340.89 338.19 340.463 332.813 339.734 327.535C369.078 295.286 387 252.442 387 205.5C387 105.425 305.575 24 205.5 24C105.425 24 24 105.425 24 205.5C24 252.848 42.233 296.026 72.0295 328.369C71.2062 334.981 70.8671 341.736 71.0469 348.599V348.603C71.0469 350.226 71.0469 352.092 71.1421 354.162C30.5516 317.438 5 264.38 5 205.5C5 94.9975 94.9975 5 205.5 5C316.003 5 406 94.9975 406 205.5C406 263.842 380.917 316.473 340.95 353.166C341 351.61 341 350.127 341 348.604V348.533V343.749V343.699L340.999 343.65ZM205.5 406C166.42 406 129.904 394.743 99.0269 375.304C105.176 372.558 109.384 366.747 110.151 359.882C137.877 377.068 170.556 387 205.5 387C240.864 387 273.908 376.827 301.846 359.259C302.439 365.903 306.45 371.969 312.475 374.989C281.49 394.624 244.795 406 205.5 406ZM329.099 324.267C323.795 329.785 318.126 334.95 312.131 339.723C308.966 285.057 264.051 241.172 208.286 240.208C150.717 238.743 102.786 283.5 99.894 340.533C93.7895 335.747 88.0158 330.558 82.6138 325.005C92.0674 266.999 141.992 222.246 203.49 221.026H203.49C265.903 219.778 318.543 264.378 329.099 324.267ZM204.5 195C175.423 195 152 171.577 152 142.5C152 113.423 175.423 90 204.5 90C233.577 90 257 113.423 257 142.5C257 171.577 233.577 195 204.5 195ZM205.5 109C186.296 109 171 124.296 171 143.5C171 162.704 186.296 178 205.5 178C224.704 178 240 162.704 240 143.5C240 124.296 224.704 109 205.5 109Z" stroke="#F9FAFF" stroke-width="10"/>
+				</svg>
+				<div class="title">New user?</div>
+				<div class="subtitle">Use the form below to create your account.</div>
+				<form  id="myForm">
+						<div class="inputBox" style="--i:1">
+							<span class="text">First Name</span>
+							<input type="text" required="required" placeholder="Enter name" class="focused js_input" name="FirstName"  maxlength="25">
+						</div>					
+						<div class="inputBox" style="--i:2">
+							<span class="text">Last Name</span>
+							<input type="text" required="required" placeholder="Enter last name" class="focused js_input" name="LastName"  maxlength="25">
+						</div>
+						<div class="inputBox" style="--i:3">
+							<span class="text">Nationality</span>
+							<p><select name="Nation" id="nation">
+								<option >Russian</option>
+								<option >Danish</option>
+								<option >British</option>
+								<option >American</option>
+								<option >Japanese</option>
+							</select></p>
+						</div>
+						<div class="inputBox" style="--i:4">
+							<span class="text">E-mail</span>
+							<input type="text" required="required" placeholder="Enter email" class="focused js_input" name="Email"  maxlength="50" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$">
+						</div>
+						<div class="inputBox" style="--i:5">
+							<span class="text">Date of Birth</span>
+							<div class="row">
+								<p><select name="Date" id="date">
+								</select></p>
+								<p><select name="Month" id="month">
+									<option>Janaury</option>
+									<option>February</option>
+									<option>March</option>
+									<option>April</option>
+									<option>May</option>
+									<option>June</option>
+									<option>July</option>
+									<option>August</option>
+									<option>September</option>
+									<option>October</option>
+									<option>November</option>
+									<option>December</option>
+								</select></p>
+								<p><select name="Years" id="year">
+								</select></p>
+							</div>
+						</div>
+						<div class="inputBox" style="--i:6">
+							<span class="text">Gender</span>
+							<div class="row">
+								<input type="radio" id="choice1"
+								name="Gender" value="Male" class="radio_button">
+								<label for="choice1">Male</label>
+								<input type="radio" id="choice2"
+								name="Gender" value="Female" class="radio_button">
+								<label for="choice2">Female</label>
+							</div>
+						</div>
+						<div class="inputBox password" style="--i:7">
+							<span class="text">Password</span>
+							<input id="userPassword" type="password" required="required" class="focused js_input" name="Password" placeholder="Create a password" data-reg="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"></input>
+							<div class="help helpPass">The password must contain uppercase and lowercase letters, as well as numbers</div>
+						</div>
+						<div class="inputBox" style="--i:8">
+							<span class="text">Confirm Password</span>
+							<input id="confPassword" type="password" required="required" class="focused js_input" name="ConfirmPassword" placeholder="Confirm password"></input>
+							<div class="help helpConf">The confirmation must match the password</div>
+						</div>
+						<div class="inputBox" style="--i:9">
+							<div class="login">
+								<span>Have an account?</span>
+								<a href="">Login</a>
+							</div>
+							<input type="submit" value="Complete Signup" name="Submit">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+	</html>
